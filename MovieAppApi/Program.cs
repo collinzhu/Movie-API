@@ -26,7 +26,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "Movie App API",
-        Description = "This is a .NET 6 API"
+        Description = "This is a .net 6 API for movie app"
     });
 
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
