@@ -33,11 +33,14 @@ builder.Services.AddSwaggerGen(options =>
     //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
-
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 
 var app = builder.Build();
-
+app.UseCors("corsapp");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
